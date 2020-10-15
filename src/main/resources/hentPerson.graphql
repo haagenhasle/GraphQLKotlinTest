@@ -1,3 +1,9 @@
+fragment folkeregistermetadata on folkeregistermetadata {
+               ajourholdstidspunkt
+               gyldighetstidspunkt
+               opphoerstidspunkt
+}
+
 query($ident: ID!, $bostedHistorikk: Boolean!){
   hentPerson(ident: $ident) {
     adressebeskyttelse{ gradering },
@@ -7,9 +13,7 @@ query($ident: ID!, $bostedHistorikk: Boolean!){
           relatertPersonsRolle
           minRolleForPerson
           folkeregistermetadata {
-            ajourholdstidspunkt
-            gyldighetstidspunkt
-            opphoerstidspunkt
+		  	...folkeregistermetadata
           }
     },
     statsborgerskap {
@@ -27,9 +31,7 @@ query($ident: ID!, $bostedHistorikk: Boolean!){
           gyldigFraOgMed
           relatertVedSivilstand
           folkeregistermetadata {
-               ajourholdstidspunkt
-               gyldighetstidspunkt
-               opphoerstidspunkt
+               ...folkeregistermetadata
           }
     },
     bostedsadresse(historikk: $bostedHistorikk) {
@@ -39,9 +41,7 @@ query($ident: ID!, $bostedHistorikk: Boolean!){
         vegadresse { postnummer },
         matrikkeladresse { postnummer },
         folkeregistermetadata {
-            ajourholdstidspunkt
-            gyldighetstidspunkt
-            opphoerstidspunkt
+            ...folkeregistermetadata
         }
     }
     kontaktadresse(historikk: $bostedHistorikk){

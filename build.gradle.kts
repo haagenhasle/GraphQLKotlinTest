@@ -5,7 +5,7 @@ version = "1.0-SNAPSHOT"
 
 plugins {
     kotlin("jvm") version "1.3.72"
-    id("com.expediagroup.graphql") version "3.6.1"
+    id("com.expediagroup.graphql") version "3.6.4"
 }
 
 
