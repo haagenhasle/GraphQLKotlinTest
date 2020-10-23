@@ -1,4 +1,4 @@
-val graphqlKotlinClientVersion = "3.6.1"
+val graphqlKotlinClientVersion = "3.6.4"
 
 group = "org.example"
 version = "1.0-SNAPSHOT"
@@ -7,7 +7,6 @@ plugins {
     kotlin("jvm") version "1.3.72"
     id("com.expediagroup.graphql") version "3.6.4"
 }
-
 
 repositories {
     mavenCentral()
@@ -32,7 +31,7 @@ graphql {
         sdlEndpoint = "https://navikt.github.io/pdl/pdl-api-sdl.graphqls"
         packageName = "pdl.generated"
         allowDeprecatedFields = false
-        queryFiles = mutableListOf(file("${project.projectDir}/src/main/resources/hentPerson.graphql")
-        )
+        queryFiles = mutableListOf(file("${project.projectDir}/src/main/resources/hentPerson.graphql"))
+        converters = mutableMapOf("DateTime" to com.expediagroup.graphql.plugin.generator.ScalarConverterMapping("java.time.LocalDateTime", "pdl.graphqlscalars.DateTimeScalarConverter")) 
     }
 }
