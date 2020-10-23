@@ -32,6 +32,6 @@ graphql {
         packageName = "pdl.generated"
         allowDeprecatedFields = false
         queryFiles = mutableListOf(file("${project.projectDir}/src/main/resources/hentPerson.graphql"))
-		converters = mutableMapOf("DateTime" to com.expediagroup.graphql.plugin.generator.ScalarConverterMapping("java.time.LocalDateTime", "pdl.graphqlscalars.DateTimeScalarConverter")) 
+        converters = mutableMapOf("DateTime" to com.expediagroup.graphql.plugin.generator.ScalarConverterMapping("java.time.LocalDateTime", "pdl.graphqlscalars.DateTimeScalarConverter")) 
     }
 }
