@@ -1,4 +1,4 @@
-fragment folkeregistermetadata on folkeregistermetadata {
+fragment folkeregistermetadata on Folkeregistermetadata {
                ajourholdstidspunkt
                gyldighetstidspunkt
                opphoerstidspunkt
